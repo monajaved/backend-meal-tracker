@@ -8,6 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 routes.forEach(route => {
+    // console.log(route)
     app[route.method](route.path, route.handler);
 });
 
