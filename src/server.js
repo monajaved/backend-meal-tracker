@@ -14,9 +14,8 @@ routes.forEach(route => {
 
 const start = async () => {
     await db.connect('mongodb://localhost:27017');
-    app.listen(8080,() => {
-        console.log('Server is listening on port 8080');
-    });
+    await app.listen(8080);
+    console.log("Listening on port 8080");
 }
-
+    
 start();

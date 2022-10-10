@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const DB_NAME = '<your db name here>';
+const DB_NAME = 'meal-tracker';
 
 export const db = {
     _dbClient: null,
@@ -10,15 +10,14 @@ export const db = {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-
         this._dbClient = client;
-    },
+    }, 
     getConnection: function() {
         if (!this._dbClient) {
-            console.log('You need to call .connect() first!');
+            console.log('You need to call the connect() function first!');
             process.exit(1);
         }
 
         return this._dbClient.db(DB_NAME);
-    }
+    },
 }
